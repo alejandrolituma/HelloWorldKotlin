@@ -1,6 +1,7 @@
 package com.example.helloworldkotlin
 
 import android.os.Bundle
+import android.util.Log
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
@@ -19,6 +20,24 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
+
+        doSomething();
+
+        Log.d("MainActivity","onCreate");
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("MainActivity","onResume");
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("MainActivity","onStart");
+    }
+
+    fun doSomething(){
+        println("doSomething");
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
